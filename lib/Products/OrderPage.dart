@@ -108,7 +108,7 @@ class _OrderPageState extends State<OrderPage> {
                   ),
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (builder){
-                      return EditProfile();
+                      return const EditProfile();
                     }));
                   },
                 )
@@ -276,7 +276,7 @@ class _OrderPageState extends State<OrderPage> {
                     const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Refundable Deposite",style: TextStyle(fontSize: 15),),
+                        Text("Refundable Deposit",style: TextStyle(fontSize: 15),),
                         Text("(Returned after rental period)",style: TextStyle(fontSize: 13),)
                       ],
                     ),

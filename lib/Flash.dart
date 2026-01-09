@@ -30,12 +30,12 @@ CollectionReference ref=FirebaseFirestore.instance.collection('Maintenance');
           }));
         } else {
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-            return WelcomePage();
+            return const WelcomePage();
           },),);
         }
       } else {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-          return Maintenance();
+          return const Maintenance();
         },),);
       }
     },);

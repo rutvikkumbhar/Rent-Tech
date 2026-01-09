@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:renttech/EditProfile.dart';
 import 'package:renttech/Products/OrderPage.dart';
 import 'package:renttech/Products/Rating.dart';
-
 import 'ProdustList.dart';
 
 class ProductInfo extends StatefulWidget {
@@ -141,7 +140,7 @@ class _ProductInfoState extends State<ProductInfo> {
                         ),
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (builder){
-                            return EditProfile();
+                            return const EditProfile();
                           }));
                         },
                       )
@@ -287,12 +286,6 @@ class _ProductInfoState extends State<ProductInfo> {
                                   subtitle: Text("${data['key9value']}"),
                                 ),
                               ),
-                              const Expanded(
-                                child: ListTile(
-                                  title: Text("Brand"),
-                                  subtitle: Text("Asus"),
-                                ),
-                              ),
                             ],
                           ),
                         ],
@@ -368,7 +361,7 @@ class _ProductInfoState extends State<ProductInfo> {
                               return GestureDetector(
                                 onTap: (){
                                   Navigator.push(context, MaterialPageRoute(builder: (builder){
-                                    return ProductInfo(collection: data['withValues'], document: data.id);
+                                    return ProductInfo(collection: data['pType'], document: data.id);
                                   }));
                                 },
                                 child: SizedBox(

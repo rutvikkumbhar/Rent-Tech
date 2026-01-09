@@ -7,7 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:renttech/Error.dart';
 import 'package:renttech/Products/ViewOrder.dart';
-
 import '../BottomBar.dart';
 
 class PaymentMethod extends StatefulWidget {
@@ -348,10 +347,10 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                                                       isOrderConfirmed?TextButton(
                                                                         child: const Text("View order"),
                                                                         onPressed: (){
-                                                                          Navigator.of(context).pushAndRemoveUntil( MaterialPageRoute(builder: (context) => BottomBar()),
+                                                                          Navigator.of(context).pushAndRemoveUntil( MaterialPageRoute(builder: (context) => const BottomBar()),
                                                                                 (Route<dynamic> route) => false,);
                                                                           Navigator.push(context, MaterialPageRoute(builder: (builder){
-                                                                            return ViewOrder();
+                                                                            return const ViewOrder();
                                                                           }));
                                                                         },
                                                                       ):const SizedBox(),
@@ -372,7 +371,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                                       final String unique=DateTime.now().millisecondsSinceEpoch.toString();
                                                       await order.doc(unique).set({
                                                         'productId' : widget.documenet.toString(),
-                                                        'withValues' : widget.collection.toString(),
+                                                        'pType' : widget.collection.toString(),
                                                         'totalRentPrice': widget.totalRent.toString(),
                                                         'rent':widget.rent.toString(),
                                                         'deposite' : widget.deposite.toString(),
@@ -399,7 +398,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                                       }).then((onValue) async {
                                                         await userOrder.doc(unique).set({
                                                           'productId' : widget.documenet.toString(),
-                                                          'withValues' : widget.collection.toString(),
+                                                          'pType' : widget.collection.toString(),
                                                           'totalRentPrice': widget.totalRent.toString(),
                                                           'rent':widget.rent.toString(),
                                                           'deposite' : widget.deposite.toString(),
@@ -426,7 +425,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                                         }).then((onValue) async {
                                                           await sellerOrder.doc(unique).set({
                                                             'productId' : widget.documenet.toString(),
-                                                            'withValues' : widget.collection.toString(),
+                                                            'pType' : widget.collection.toString(),
                                                             'totalRentPrice': widget.totalRent.toString(),
                                                             'rent':widget.rent.toString(),
                                                             'deposite' : widget.deposite.toString(),

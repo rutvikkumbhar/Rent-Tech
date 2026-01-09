@@ -97,7 +97,7 @@ class _ViewOrderState extends State<ViewOrder> {
                             ),
                             onTap: (){
                               Navigator.push(context, MaterialPageRoute(builder: (builder){
-                                return ProductInfo(collection: data['withValues'].toString(), document: data['productId']);
+                                return ProductInfo(collection: data['pType'].toString(), document: data['productId']);
                               }));
                             },
                           ),
@@ -305,7 +305,7 @@ class _ViewOrderState extends State<ViewOrder> {
                                                                                     isOrderDeleted?TextButton(
                                                                                       child: const Text("View history"),
                                                                                       onPressed: (){
-                                                                                        Navigator.of(context).pushAndRemoveUntil( MaterialPageRoute(builder: (context) => BottomBar()),
+                                                                                        Navigator.of(context).pushAndRemoveUntil( MaterialPageRoute(builder: (context) => const BottomBar()),
                                                                                               (Route<dynamic> route) => false,);
                                                                                         Navigator.push(context, MaterialPageRoute(builder: (builder){return const CanceledOrders();
                                                                                         }));

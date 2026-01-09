@@ -87,7 +87,7 @@ class _PastRentalsState extends State<PastRentals> {
                     ),
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (builder){
-                        return ProductInfo(collection: data['withValues'], document: data['productId']);
+                        return ProductInfo(collection: data['pType'], document: data['productId']);
                       }));
                     },
                   ),

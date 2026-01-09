@@ -28,11 +28,11 @@ class bottomState extends State<BottomBar> {
   final FirebaseAuth _auth=FirebaseAuth.instance;
    int selectedPage=0 ;
     final List<Widget> module=[
-      Home(),
-      Categories(),
+      const Home(),
+      const Categories(),
       const AIChat(),
       Cart(),
-      Profile(),
+      const Profile(),
     ];
 
   @override
@@ -53,7 +53,7 @@ class bottomState extends State<BottomBar> {
             icon: const Icon(Boxicons.bx_bell,color: Color(0xff1A4D2E),),
             onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (builder){
-                return Notifications();
+                return const Notifications();
               }));
             },
           ),
@@ -105,7 +105,7 @@ class bottomState extends State<BottomBar> {
                 trailing: const Icon(Icons.keyboard_arrow_right_outlined,color: Colors.grey,),
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (builder){
-                    return Help();
+                    return const Help();
                   }));
                 },
               ),
@@ -155,7 +155,7 @@ class bottomState extends State<BottomBar> {
                               ),
                               onPressed: (){
                                 _auth.signOut();
-                                Navigator.of(context).pushAndRemoveUntil( MaterialPageRoute(builder: (context) => WelcomePage()),
+                                Navigator.of(context).pushAndRemoveUntil( MaterialPageRoute(builder: (context) => const WelcomePage()),
                                       (Route<dynamic> route) => false,);
                               },
                             ),

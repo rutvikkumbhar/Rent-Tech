@@ -50,7 +50,7 @@ class Cart extends StatelessWidget {
                     return GestureDetector(
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (builder){
-                          return ProductInfo(collection: data['withValues'], document: data['pID']);
+                          return ProductInfo(collection: data['pType'], document: data['pID']);
                         }));
                       },
                       child: Padding(
@@ -97,7 +97,7 @@ class Cart extends StatelessWidget {
                                               child: const Text("Rent now",style: TextStyle(color: Colors.white,fontSize: 16),),
                                               onPressed: (){
                                                 Navigator.push(context, MaterialPageRoute(builder: (builder){
-                                                  return OrderPage(collection: data['withValues'], document: data.id);
+                                                  return OrderPage(collection: data['pType'], document: data.id);
                                                 }));
                                               },
                                             ),
